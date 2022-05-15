@@ -110,7 +110,7 @@ true
 ```
 
 ### Is Empty
-Check is string is empty including no whitespace
+Check is string empty including no whitespace
 
 Usage (has whitespace)
 ```
@@ -143,10 +143,63 @@ true
 ```
 
 ### Is Blank
+Check is string blank contains whitespace
+
+Usage (has whitespace)
+```
+local stringizer = Stringizer.new(" ") 
+stringizer:is_blank()
+```
+Output
+```
+true
+```
+
+Usage (has no whitespace)
+```
+local stringizer = Stringizer.new(" ") 
+stringizer:is_blank()
+```
+Output
+```
+true
+```
+
+Usage (has as non whitespace characters)
+```
+local stringizer = Stringizer.new("test") 
+stringizer:is_blank()
+```
+Output
+```
+false
+```
 
 ### Base64 Encode
+Base64 Encode given string
+
+Usage (has whitespace)
+```
+local stringizer = Stringizer.new("ȘŦŗÍñĝìzĕŕߓ")
+stringizer:base64_encode():get_value()
+```
+Output
+```
+yJjFpsWXw43DscSdw6x6xJXFld+T
+```
 
 ### Base64 Decode
+Base64 Decode given string
+
+Usage (has whitespace)
+```
+local stringizer = Stringizer.new("yJjFpsWXw43DscSdw6x6xJXFld+T")
+stringizer:base64_encode():get_value()
+```
+Output
+```
+ȘŦŗÍñĝìzĕŕߓ
+```
 
 ### Between
 
