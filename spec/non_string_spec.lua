@@ -24,6 +24,16 @@ describe("Stringizer", function()
         local stringizer = Stringizer.new(" ")   
         assert.equal(stringizer:is_blank(),true)
     end)   
+    
+    it("should accept string with whitespace", function()
+        local stringizer = Stringizer.new("")   
+        assert.equal(stringizer:is_blank(),true)
+    end)  
+    
+    it("should accept string with whitespace", function()
+        local stringizer = Stringizer.new("x")   
+        assert.equal(stringizer:is_blank(),false)
+    end) 
 
   end)
 end)
