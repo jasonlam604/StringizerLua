@@ -5,6 +5,14 @@
 Lua String Manipulation Library
 
 ---
+Table of Contents
+* [Overview](#overview)
+* [Version](#version)
+* [Installation](#installation)
+* [Tests and Code Coverage](#tests-and-code-coverage)
+* [License](#license)
+
+---
 
 ## Overview
 
@@ -21,7 +29,10 @@ Unstable in development as May 15th, 2022
 Release 0.1.0
 
 ## Installation
-Coming soon, to be release using LuaRocks
+// Coming soon using LuaRocks
+
+## License
+The StringizerLua is licensed under the MIT license
 
 ---
 
