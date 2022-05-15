@@ -7,8 +7,6 @@ describe("Stringizer", function()
     
     it("should encode and decode ȘŦŗÍñĝìzĕŕߓ", function()
        local stringizer = Stringizer.new("ȘŦŗÍñĝìzĕŕߓ")
-       
-       print (stringizer:base64_encode():get_value())
        assert.equal(stringizer:base64_encode():base64_decode():get_value(),"ȘŦŗÍñĝìzĕŕߓ")
     end)
  
