@@ -2,6 +2,8 @@
 -- Modules
 local Base64 = require ("encoders.base64")
 local Container = require ("checkers.container")
+local Between = require ("transformers.between")
+local Chop = require ("transformers.chop")
 
 ------
 -- Main Class Stringizer, function are chainable
@@ -110,6 +112,27 @@ function Stringizer.new(value,is_strict)
       end
    
       return (Container.new()).starts_with(self.value, suffix, is_case_insensitive)
+   end
+   
+   -----
+   -- Extracts a string between left and right strings.
+   -- @return string
+   function self.between(left, right)
+      return (Between.new()).between(self.value, left, right)
+   end
+   
+   -----
+   -- Remove given prefix
+   -- @return string
+   function self.chop_left(prefix)
+      return (Chop.new()).chop_left(self.value, prefix)
+   end
+   
+   -----
+   -- Remove given suffix
+   -- @return string
+   function self.chop_right(suffix)
+      return (Chop.new()).chop_right(self.value, suffix)
    end
    
    return self   

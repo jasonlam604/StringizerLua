@@ -11,6 +11,11 @@ describe("Stringizer", function()
         assert.equal(stringizer.ends_with("Buzz"),true)
     end)
     
+    it("文字列のそれ should end with れ", function()
+        local stringizer = Stringizer.new("文字列のそれ")   
+        assert.equal(stringizer.ends_with("れ"),true)
+    end)
+    
     it("Fizz Buzz should not end with Buzzz", function()
         local stringizer = Stringizer.new("Fizz Buzz")   
         assert.equal(stringizer.ends_with("Buzzz"),false)
@@ -53,6 +58,11 @@ describe("Stringizer", function()
     it("Fizz Buzz should start with Buzz", function()
         local stringizer = Stringizer.new("Fizz Buzz")   
         assert.equal(stringizer.starts_with("Fizz"),true)
+    end)
+    
+    it("文字列のそれ should start with 文字", function()
+        local stringizer = Stringizer.new("文字列のそれ")   
+        assert.equal(stringizer.starts_with("文字"),true)
     end)
     
     it("Fizz Buzz should not start with FiZZ", function()
