@@ -86,7 +86,7 @@ Install `busted`:
 
 Run All Tests:
 
-	$ busted --coverage /spec
+	$ busted --coverage ./spec
 
 ### Code Coverage
 
@@ -98,7 +98,7 @@ Install `luacov`:
 
 Run All Tests and check code coverage:
 
-	$ busted --coverage /spec
+	$ busted --coverage ./spec
 	$ luacov luacov.stats.out
 	$ cat luacov.report.out
     
