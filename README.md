@@ -72,3 +72,37 @@ Coming soon, to be release using LuaRocks
 
 ### Chop Right
 
+---
+
+## Tests and Code Coverage
+
+### Requirements
+
+All tests are written using [busted](http://olivinelabs.com/busted/ "Busted home page").
+
+Install `busted`:
+
+	$ luarocks install busted
+
+Run All Tests:
+
+	$ busted --coverage /spec
+
+### Code Coverage
+
+Code coverage is done using [luacov](http://luacov.luaforge.net/).
+
+Install `luacov`:
+
+	$ luarocks install luacov
+
+Run All Tests and check code coverage:
+
+	$ busted --coverage /spec
+	$ luacov luacov.stats.out
+	$ cat luacov.report.out
+    
+You use the **run_coverage** bash script, friendly reminder you may need to make it executuable first
+```
+chomd +x run_coverage
+```
