@@ -1,0 +1,11 @@
+return {
+  _all = {
+    coverage = true
+  },
+  default = {
+    coverage = true,
+    verbose = true,
+    ROOT = {"spec"},
+    lpath = "src/?.lua;src/encoders/?.lua;src/checkers/?.lua;spec/?.lua;"
+  }
+}
