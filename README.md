@@ -180,7 +180,7 @@ Base64 Encode given string
 
 Usage (has whitespace)
 ```
-local stringizer = Stringizer.new("ȘŦŗÍñĝìzĕŕߓ")
+local stringizer = Stringizer.new("ȘŦŗÍñĝìzĕŕ")
 stringizer:base64_encode():get_value()
 ```
 Output
@@ -198,18 +198,73 @@ stringizer:base64_encode():get_value()
 ```
 Output
 ```
-ȘŦŗÍñĝìzĕŕߓ
+ȘŦŗÍñĝìzĕŕ
 ```
 
 ### Between
+Extracts the a string from a larger string where both left and right side are identified
+
+Usage
+```
+local stringizer = Stringizer.new("<div>ȘŦŗÍñĝìzĕŕ</div>")   
+stringizer.between("<div>","</div>")
+```
+Output
+```
+ȘŦŗÍñĝìzĕŕ
+```
 
 ### Starts With
+Checks if string begins with the supplied prefix
+
+Usage
+```
+local stringizer = Stringizer.new("Fizz Buzz")   
+stringizer.starts_with("Fizz")
+```
+Output
+```
+true
+```
 
 ### Ends With
+Checks if string ends with the supplied suffix
+
+Usage
+```
+local stringizer = Stringizer.new("Fizz Buzz")   
+stringizer.ends_with("Buzz")
+```
+Output
+```
+true
+```
 
 ### Chop Left
+Modify string by dropping off the supplied prefix
+
+Usage
+```
+local stringizer = Stringizer.new("Fizz Buzz")   
+stringizer.chop_left("Fizz ")
+```
+Output
+```
+Buzz
+```
 
 ### Chop Right
+Modify string by dropping off the supplied suffix
+
+Usage
+```
+local stringizer = Stringizer.new("Fizz Buzz")   
+stringizer.chop_left(" Buzz")
+```
+Output
+```
+Fizz
+```
 
 ---
 
