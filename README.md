@@ -1,6 +1,6 @@
 # StringizerLua
 
-[![License](http://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE.md)
+[![License](https://img.shields.io/github/license/jasonlam604/StringizerLua)](LICENSE.md)
 
 Lua String Manipulation Library
 
