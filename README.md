@@ -31,6 +31,11 @@ Release 0.1.0
 ## Installation
 // Coming soon using LuaRocks
 
+## Change Log
+
+May 15, 2022 Initial Release 0.1.0
+May 16, 2002 Remove the use of instantiating Stringizer instead string manipulation is exposed via static functions only. Added **split**
+
 ## License
 The StringizerLua is licensed under the MIT license
 
@@ -40,59 +45,34 @@ The StringizerLua is licensed under the MIT license
 
 <table>
     <tr>
-        <td><a href="#get-value">get_value</a></td>
-        <td><a href="#get-original-value">get_orignal_value</a></td>
         <td><a href="#is-string">is_string</a></td>
         <td><a href="#is-empty">is_empty</a></td>
         <td><a href="#is-blank">is_blank</a></td>
         <td><a href="#base64-encode">base64_encode</a></td>
-        <td><a href="#base64-decode">base64_decode</a></td>
-        <td><a href="#between">between</a></td>
+	<td><a href="#base64-decode">base64_decode</a></td>
     </tr>
-      <tr>
+    <tr>
+	<td><a href="#between">between</a></td>      
         <td><a href="#starts-with">starts_with</a></td>
         <td><a href="#ends-with">ends_with</a></td>
         <td><a href="#chop-left">chop-left</a></td>
         <td><a href="#chop-right">chop-right</a></td>
+    </tr>
+    <tr>
+	<td><a href="#split">split</a></td>      
         <td><a href="#"></a></td>
         <td><a href="#"></a></td>
         <td><a href="#"></a></td>
-        <td><a href="#b"></a></td>
+        <td><a href="#"></a></td>
     </tr>
 </table>  
-
-### Get Value
-This retrieves string value in it's current state this would include any applied string manipulations
-
-Usage
-```
-local stringizer = Stringizer.new("my-test-value") 
-stringizer:get_value() 
-```
-Output
-```
-my-test-value
-```
-### Get Original Value
-This retrieves the original given string value prior to any manipulation
-
-Usage
-```
-local stringizer = Stringizer.new("my-test-value") 
-stringizer:get_value() 
-```
-Output
-```
-my-test-value
-```
 
 ### Is String
 This retrieves the original given string value prior to any manipulation
 
 Usage
 ```
-local stringizer = Stringizer.new(42) 
-stringizer:is_string()
+print(Stringizer.is_string(42))
 ```
 Output
 ```
@@ -101,8 +81,7 @@ false
 
 Usage
 ```
-local stringizer = Stringizer.new("valid-string") 
-stringizer:is_string()
+print(Stringizer.is_string("valid-string"))
 ```
 Output
 ```
@@ -114,8 +93,7 @@ Check is string empty including no whitespace
 
 Usage (has whitespace)
 ```
-local stringizer = Stringizer.new(" ") 
-stringizer:is_empty()
+print(Stringizer.is_empty(" "))
 ```
 Output
 ```
@@ -124,8 +102,7 @@ false
 
 Usage (no whitespace)
 ```
-local stringizer = Stringizer.new("") 
-stringizer:is_empty()
+print(Stringizer.is_empty(""))
 ```
 Output
 ```
@@ -134,8 +111,7 @@ true
 
 Usage (nil)
 ```
-local stringizer = Stringizer.new(nil) 
-stringizer:is_empty()
+print(Stringizer.is_empty(nil))
 ```
 Output
 ```
@@ -147,8 +123,7 @@ Check is string blank contains whitespace
 
 Usage (has whitespace)
 ```
-local stringizer = Stringizer.new(" ") 
-stringizer:is_blank()
+print(Stringizer.is_blank(" "))
 ```
 Output
 ```
@@ -157,8 +132,7 @@ true
 
 Usage (has no whitespace)
 ```
-local stringizer = Stringizer.new(" ") 
-stringizer:is_blank()
+print(Stringizer.is_blank(" "))
 ```
 Output
 ```
@@ -167,8 +141,7 @@ true
 
 Usage (has as non whitespace characters)
 ```
-local stringizer = Stringizer.new("test") 
-stringizer:is_blank()
+print(Stringizer.is_blank("test"))
 ```
 Output
 ```
@@ -180,8 +153,7 @@ Base64 Encode given string
 
 Usage (has whitespace)
 ```
-local stringizer = Stringizer.new("ȘŦŗÍñĝìzĕŕ")
-stringizer:base64_encode():get_value()
+print(Stringizer.base64_encode("ȘŦŗÍñĝìzĕŕ"))
 ```
 Output
 ```
@@ -193,8 +165,7 @@ Base64 Decode given string
 
 Usage (has whitespace)
 ```
-local stringizer = Stringizer.new("yJjFpsWXw43DscSdw6x6xJXFld+T")
-stringizer:base64_encode():get_value()
+print(Stringizer.base64_decode("yJjFpsWXw43DscSdw6x6xJXFld+T"))
 ```
 Output
 ```
@@ -205,9 +176,8 @@ Output
 Extracts the a string from a larger string where both left and right side are identified
 
 Usage
-```
-local stringizer = Stringizer.new("<div>ȘŦŗÍñĝìzĕŕ</div>")   
-stringizer.between("<div>","</div>")
+``` 
+print(Stringizer.between("<div>ȘŦŗÍñĝìzĕŕ</div>", "<div>","</div>"))
 ```
 Output
 ```
@@ -219,8 +189,7 @@ Checks if string begins with the supplied prefix
 
 Usage
 ```
-local stringizer = Stringizer.new("Fizz Buzz")   
-stringizer.starts_with("Fizz")
+print(Stringizer.starts_with("Fizz Buzz", "Fizz"))
 ```
 Output
 ```
@@ -232,8 +201,7 @@ Checks if string ends with the supplied suffix
 
 Usage
 ```
-local stringizer = Stringizer.new("Fizz Buzz")   
-stringizer.ends_with("Buzz")
+print(Stringizer.ends_with("Fizz Buzz", "Buzz"))
 ```
 Output
 ```
@@ -245,8 +213,7 @@ Modify string by dropping off the supplied prefix
 
 Usage
 ```
-local stringizer = Stringizer.new("Fizz Buzz")   
-stringizer.chop_left("Fizz ")
+print(Stringizer.chop_left("Fizz Buzz", "Fizz "))
 ```
 Output
 ```
@@ -258,13 +225,21 @@ Modify string by dropping off the supplied suffix
 
 Usage
 ```
-local stringizer = Stringizer.new("Fizz Buzz")   
-stringizer.chop_left(" Buzz")
+print(Stringizer.chop_left("Fizz Buzz", " Buzz"))
 ```
 Output
 ```
 Fizz
 ```
+
+### Split
+Split string into a list of words, split based on the given delimiter
+
+Usage
+```
+local values = Stringizer.split("Fizz:Buzz:stringizer",":")
+```
+values of type list will contain 3 values:  Fizz, Buzz, stringizer
 
 ---
 

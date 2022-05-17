@@ -6,19 +6,16 @@ describe("Stringizer", function()
 
   describe("Between Tests", function()
    
-    it("should <div>ȘŦŗÍñĝìzĕŕ</div> be successful the resulting string is ȘŦŗÍñĝìzĕŕ", function()
-        local stringizer = Stringizer.new("<div>ȘŦŗÍñĝìzĕŕ</div>")   
-        assert.equal(stringizer.between("<div>","</div>"),"ȘŦŗÍñĝìzĕŕ")
+    it("should <div>ȘŦŗÍñĝìzĕŕ</div> be successful the resulting string is ȘŦŗÍñĝìzĕŕ", function() 
+        assert.equal(Stringizer.between("<div>ȘŦŗÍñĝìzĕŕ</div>", "<div>", "</div>"),"ȘŦŗÍñĝìzĕŕ")
     end)
     
     it("should be error when left is not found", function()
-        local stringizer = Stringizer.new("<div>ȘŦŗÍñĝìzĕŕ</div>")   
-        assert.has_error(function() stringizer.between("<divv>","</div>") end, "Left value not found")
+        assert.has_error(function() Stringizer.between("<div>ȘŦŗÍñĝìzĕŕ</div>", "<divv>", "</div>") end, "Left value not found")
     end)
     
-    it("should be error when right is not found", function()
-        local stringizer = Stringizer.new("<div>ȘŦŗÍñĝìzĕŕ</div>")   
-        assert.has_error(function() stringizer.between("<div>","</divv>") end, "Right value not found")
+    it("should be error when right is not found", function() 
+        assert.has_error(function() Stringizer.between("<div>ȘŦŗÍñĝìzĕŕ</div>", "<div>", "</divv>") end, "Right value not found")
     end)
         
   end)
