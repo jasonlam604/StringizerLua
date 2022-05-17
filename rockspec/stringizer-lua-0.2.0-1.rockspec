@@ -1,5 +1,5 @@
 package = "stringizer-lua"
-version = "0.1.0-1"
+version = "0.2.0-1"
 source = {
   url = "hgit@github.com:jasonlam604/StringizerLua.git"
 }
