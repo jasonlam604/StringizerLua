@@ -1,5 +1,6 @@
 # StringizerLua
 
+[![Actions Status](https://github.com/jasonlam604/StringizerLua/workflows/test/badge.svg)](https://github.com/jasonlam604/StringizerLua/actions)
 [![License](https://img.shields.io/github/license/jasonlam604/StringizerLua)](LICENSE.md)
 
 Lua String Manipulation Library
