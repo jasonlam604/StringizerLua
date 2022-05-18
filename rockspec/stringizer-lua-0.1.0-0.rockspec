@@ -1,7 +1,7 @@
 package = "stringizer-lua"
 version = "0.1.0-1"
 source = {
-  url = "hgit@github.com:jasonlam604/StringizerLua.git"
+  url = "git://github.com/jasonlam604/StringizerLua.git"
 }
 description = {
   summary = "Lua String manipulation made easy!",

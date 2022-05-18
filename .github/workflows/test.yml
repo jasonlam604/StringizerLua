@@ -18,6 +18,7 @@ jobs:
     - name: build
       run: |
         luarocks install busted
+        luarocks install luacov
         luarocks make
 
     - name: test
