@@ -5,6 +5,7 @@ local Container = require ("checkers.container")
 local Between = require ("transformers.between")
 local Chop = require ("transformers.chop")
 local Parts = require ("transformers.parts")
+local Trim = require ("transformers.trim")
 
 ------
 -- Create the table for the class definition
@@ -114,6 +115,27 @@ end
 -- @return string
 function Stringizer.split(value,delimiter)
   return (Parts.new()).split(value, delimiter)
+end
+
+-----
+-- Remove whitespace on left side of string
+-- @return string
+function Stringizer.ltrim(value)
+  return (Trim.new()).left(value)
+end
+
+-----
+-- Remove whitespace on right side of string
+-- @return string
+function Stringizer.rtrim(value)
+  return (Trim.new()).right(value)
+end
+
+-----
+-- Remove whitespace on left and right side of string
+-- @return string
+function Stringizer.trim(value)
+  return (Trim.new()).both(value)
 end
 
 return Stringizer
