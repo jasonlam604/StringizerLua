@@ -24,3 +24,6 @@ jobs:
     - name: test
       run: |
         busted -o utfTerminal
+
+    - name: Codecov
+      uses: codecov/codecov-action@v3.1.0
