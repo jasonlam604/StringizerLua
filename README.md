@@ -56,15 +56,22 @@ The StringizerLua is licensed under the MIT license
 	<td><a href="#between">between</a></td>      
         <td><a href="#starts-with">starts_with</a></td>
         <td><a href="#ends-with">ends_with</a></td>
-        <td><a href="#chop-left">chop-left</a></td>
-        <td><a href="#chop-right">chop-right</a></td>
+        <td><a href="#chop-left">chop_left</a></td>
+        <td><a href="#chop-right">chop_right</a></td>
     </tr>
     <tr>
 	<td><a href="#split">split</a></td>      
+        <td><a href="#trim">trim</a></td>
+        <td><a href="#trim-left">trim_left</a></td>
+        <td><a href="#trim-right">trim_right</a></td>
         <td><a href="#"></a></td>
-        <td><a href="#"></a></td>
-        <td><a href="#"></a></td>
-        <td><a href="#"></a></td>
+    </tr>
+    <tr>
+	<td><a href="#url-encode">url_encode</a></td>      
+        <td><a href="#url-decode">url_decode</a></td>
+        <td><a href="#pad">pad</a></td>
+        <td><a href="#pad-left">pad_left</a></td>
+        <td><a href="#pad-right">pad_right</a>rpad</td>
     </tr>
 </table>  
 
@@ -242,7 +249,114 @@ local values = Stringizer.split("Fizz:Buzz:stringizer",":")
 ```
 values of type list will contain 3 values:  Fizz, Buzz, stringizer
 
+
+### Trim
+Trim whitespace from string on both left and righ sides
+
+Usage
+```
+print(Stringizer.trim("  Fizz Buzz     ")
+```
+
+Output
+```
+Fizz Buzz
+```
+
+### Trim Left
+Trim whitespace from left side of string
+
+Usage
+```
+print(Stringizer.trim("  Fizz Buzz")
+```
+
+Output
+```
+Fizz Buzz
+```
+
+### Trim Right
+Trim whitespace from right side of string
+
+Usage
+```
+print(Stringizer.trim("Fizz Buzz     ")
+```
+
+Output
+```
+Fizz Buzz
+```
 ---
+
+### URL Encode
+URL Encode string
+
+Usage
+```
+print(Stringizer.url_encode("!@#$%^&*()-=_+[]\\{}|;':\",./<>?`~")
+```
+
+Output
+```
+%21%40%23%24%25%5E%26%2A%28%29-%3D_%2B%5B%5D%5C%7B%7D%7C%3B%27%3A%22%2C.%2F%3C%3E%3F%60~
+```
+
+### URL Decode
+URL Decode string
+
+Usage
+```
+print(Stringizer.url_encode("%21%40%23%24%25%5E%26%2A%28%29-%3D_%2B%5B%5D%5C%7B%7D%7C%3B%27%3A%22%2C.%2F%3C%3E%3F%60~")
+```
+
+Output
+```
+!@#$%^&*()-=_+[]\\{}|;':\",./<>?`~
+```
+
+### Pad Left
+Pad Left side of string, *pad_left(value, pad_number, value_append)*
+
+Usage
+```
+print(Stringizer.trim_left("  Fizz Buzz  "))
+```
+
+Output
+```
+------Fizz Buzz
+```
+
+### Pad Right
+Pad Right side of string, *pad_right(value, pad_number, value_append)*
+
+Usage
+```
+print(Stringizer.pad_right("Fizz Buzz", 15, "-"))
+```
+
+Output
+```
+Fizz Buzz------
+```
+
+### Pad
+Pad Left & Right side of string, *pad(value, pad_number, value_append)*
+
+Usage
+```
+print(Stringizer.trim("  Fizz Buzz  "))
+```
+
+Output
+```
+---FizzBuzz----
+```
+
+---
+
 
 ## Tests and Code Coverage
 
