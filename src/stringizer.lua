@@ -1,9 +1,13 @@
 -----
 -- Modules
 local Base64 = require ("encoders.base64")
+local Url = require ("encoders.url")
+
 local Container = require ("checkers.container")
+
 local Between = require ("transformers.between")
 local Chop = require ("transformers.chop")
+local Pad = require ("transformers.Pad")
 local Parts = require ("transformers.parts")
 local Trim = require ("transformers.trim")
 
@@ -136,6 +140,41 @@ end
 -- @return string
 function Stringizer.trim(value)
   return (Trim.new()).both(value)
+end
+
+-----
+-- Encode URL
+-- @return string
+function Stringizer.url_encode(value)
+  return (Url.new()).encode(value)
+end
+
+-----
+-- Decode URL
+-- @return string
+function Stringizer.url_decode(value)
+  return (Url.new()).decode(value)
+end
+
+-----
+-- Pad Left
+-- @return string
+function Stringizer.lpad(value, pad_number, value_append)
+  return (Pad.new()).left(value, pad_number, value_append)
+end
+
+-----
+-- Pad Right
+-- @return string
+function Stringizer.rpad(value, pad_number, value_append)
+  return (Pad.new()).right(value, pad_number, value_append)
+end
+
+-----
+-- Pad Both
+-- @return string
+function Stringizer.pad(value, pad_number, value_append)
+  return (Pad.new()).both(value, pad_number, value_append)
 end
 
 return Stringizer
