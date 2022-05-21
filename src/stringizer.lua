@@ -124,14 +124,14 @@ end
 -----
 -- Remove whitespace on left side of string
 -- @return string
-function Stringizer.ltrim(value)
+function Stringizer.trim_left(value)
   return (Trim.new()).left(value)
 end
 
 -----
 -- Remove whitespace on right side of string
 -- @return string
-function Stringizer.rtrim(value)
+function Stringizer.trim_right(value)
   return (Trim.new()).right(value)
 end
 
@@ -159,14 +159,14 @@ end
 -----
 -- Pad Left
 -- @return string
-function Stringizer.lpad(value, pad_number, value_append)
+function Stringizer.pad_left(value, pad_number, value_append)
   return (Pad.new()).left(value, pad_number, value_append)
 end
 
 -----
 -- Pad Right
 -- @return string
-function Stringizer.rpad(value, pad_number, value_append)
+function Stringizer.pad_right(value, pad_number, value_append)
   return (Pad.new()).right(value, pad_number, value_append)
 end
 
