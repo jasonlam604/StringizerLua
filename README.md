@@ -33,9 +33,9 @@ Release 0.1.0
 // Coming soon using LuaRocks
 
 ## Change Log
-
+- May 21, 2022 Added tri, trim_left, trim_right, url_encode, url_decode, pad, pad_left, pad_right
+- May 16, 2022 Remove the use of instantiating Stringizer instead string manipulation is exposed via static functions only. Added **split**
 - May 15, 2022 Initial Release 0.1.0
-- May 16, 2002 Remove the use of instantiating Stringizer instead string manipulation is exposed via static functions only. Added **split**
 
 ## License
 The StringizerLua is licensed under the MIT license
