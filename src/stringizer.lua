@@ -7,7 +7,7 @@ local Container = require ("checkers.container")
 
 local Between = require ("transformers.between")
 local Chop = require ("transformers.chop")
-local Pad = require ("transformers.Pad")
+local Pad = require ("transformers.pad")
 local Parts = require ("transformers.parts")
 local Trim = require ("transformers.trim")
 
