@@ -71,7 +71,7 @@ The StringizerLua is licensed under the MIT license
         <td><a href="#url-decode">url_decode</a></td>
         <td><a href="#pad">pad</a></td>
         <td><a href="#pad-left">pad_left</a></td>
-        <td><a href="#pad-right">pad_right</a>rpad</td>
+        <td><a href="#pad-right">pad_right</a></td>
     </tr>
 </table>  
 
